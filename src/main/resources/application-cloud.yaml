@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    url: ${vcap.services.cloundfoundry-database-tester-db.credentials.jdbcUrl}
+    username: ${vcap.services.cloundfoundry-database-tester-db.credentials.username}
+    password: ${vcap.services.cloundfoundry-database-tester-db.credentials.password}

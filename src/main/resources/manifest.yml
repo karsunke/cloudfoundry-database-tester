@@ -1,0 +1,12 @@
+applications:
+  - name: cloudfoundry-database-tester
+    path: <your-full-path-here>/cloudfoundry-data-base-0.0.1-SNAPSHOT.jar
+    buildpacks:
+      - java_buildpack_cached
+    memory: 768M
+    stack: cflinuxfs3
+    services:
+      - cloundfoundry-database-tester-db
+    env:
+      JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
+      SPRING_PROFILES_ACTIVE: cloud

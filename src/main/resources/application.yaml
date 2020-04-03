@@ -1,0 +1,33 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    discovery:
+      enabled: false
+  jpa:
+    show-sql: false
+    database: MYSQL
+    properties:
+      hibernate:
+        temp.use_jdbc_metadata_defaults: false
+        format_sql: false
+        jdbc:
+          time_zone: UTC
+    hibernate:
+      ddl-auto: none
+      use-new-id-generator-mappings: false
+    open-in-view: false
+
+
+management:
+  info:
+    git:
+      mode: full
+    build:
+      enabled: true
+    env:
+      enabled: true
+  metrics.distribution.percentiles-histogram.http.server.requests: true
+  endpoint:
+    metrics.enabled: true
+  endpoints.web.exposure.include: health,info,loggers,env,configprops,metrics,scheduledtasks,refresh
